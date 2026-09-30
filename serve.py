@@ -11,6 +11,7 @@ import os
 import sys
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", "8090"))
+HOST = os.environ.get("HOST", "127.0.0.1")
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
@@ -22,4 +23,4 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *args):
         pass
 
-http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+http.server.ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
