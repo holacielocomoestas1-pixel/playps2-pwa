@@ -35,10 +35,26 @@
           Elegir archivo…
           <input type="file" id="fileInput" accept=".iso,.cso,.chd,.isz,.bin,.elf" hidden>
         </label>
+        <div class="urlrow">
+          <span class="url-label">…o pega el enlace directo a tu archivo:</span>
+          <div class="urlbox">
+            <input type="url" id="urlInput" placeholder="https://…/juego.iso" inputmode="url" autocomplete="off">
+            <button id="urlBtn" type="button">Cargar</button>
+          </div>
+          <p class="hint">El servidor del enlace debe permitir CORS. También puedes usar un enlace de la biblioteca homebrew de abajo.</p>
+        </div>
         <p class="status" id="status">Iniciando el núcleo…</p>
         <p class="legal">⚠️ Experimental: sin JIT con invalidación de caché ni control de punto flotante.
         Los juegos 3D exigentes (p. ej. <b>God of War</b>) <b>no serán jugables</b> por esta vía.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="homebrew" id="homebrew" aria-label="Biblioteca homebrew">
+    <h2>🎮 Homebrew gratis</h2>
+    <p class="hb-note">Juegos libres y gratuitos, verificados. Al pulsar Jugar se descargan (quedan en caché para la próxima vez).</p>
+    <div class="hb-grid" id="hbGrid">
+      <p class="hb-loading">Cargando catálogo…</p>
     </div>
   </section>
 

@@ -1,12 +1,13 @@
 // Service worker mínimo: caché de la app shell. Los archivos del usuario
 // (ISO/ELF) NO se cachean: se leen en streaming desde el selector de archivos.
-const CACHE = "playps2-v1";
+const CACHE = "playps2-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",
+  "./homebrew/catalog.json",
   "./vendor/Play.js",
   "./vendor/Play.wasm",
   "./icons/icon-192.png",
