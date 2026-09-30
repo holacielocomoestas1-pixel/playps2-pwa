@@ -155,3 +155,44 @@ Building for 83700b2.
 -- Build files have been written to: /tmp/play-src/build_web
 === configure exit: 0 ===
 === Wed Sep 30 10:45:42 UTC 2026 cmake --build . --config Release -j2 ===
+[ 95%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_IoFileMgrForUser.cpp.o
+[ 96%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_KernelLibrary.cpp.o
+[ 96%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_PsfBios.cpp.o
+[ 96%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_PsfDevice.cpp.o
+[ 96%] Building CXX object Source/ui_js/CMakeFiles/Play.dir/GSH_OpenGLJs.cpp.o
+[ 96%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_PsfSubSystem.cpp.o
+[ 97%] Building CXX object Source/ui_js/CMakeFiles/Play.dir/InputProviderEmscripten.cpp.o
+[ 97%] Building CXX object Source/ui_js/CMakeFiles/Play.dir/Main.cpp.o
+[ 97%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_SasCore.cpp.o
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_StdioForUser.cpp.o
+[ 98%] Building CXX object Source/ui_js/CMakeFiles/Play.dir/Ps2VmJs.cpp.o
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_SysMemUserForUser.cpp.o
+[ 98%] Linking CXX executable Play.js
+em++: warning: -pthread + ALLOW_MEMORY_GROWTH may run non-wasm code slowly, see https://github.com/WebAssembly/design/issues/1271 [-Wpthreads-mem-growth]
+cache:INFO: generating system asset: symbol_lists/736867759564ede61921d5bb865a3591336c5fcb.json... (this will be cached in "/home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cache/symbol_lists/736867759564ede61921d5bb865a3591336c5fcb.json" for subsequent builds)
+cache:INFO:  - ok
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_ThreadManForUser.cpp.o
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/Psp_UmdUser.cpp.o
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/psp/PspBios.cpp.o
+[ 98%] Building CXX object tools/PsfPlayer/Source/ui_js/PsfCore/CMakeFiles/PsfCore.dir/PsfRarArchive.cpp.o
+In file included from /tmp/play-src/tools/PsfPlayer/Source/PsfRarArchive.cpp:4:
+In file included from /tmp/play-src/deps/Dependencies/build_cmake/unrarsrc-5.2.5/../../unrarsrc-5.2.5/unrar/rar.hpp:6:
+/tmp/play-src/deps/Dependencies/build_cmake/unrarsrc-5.2.5/../../unrarsrc-5.2.5/unrar/os.hpp:200:11: warning: 'LITTLE_ENDIAN' macro redefined [-Wmacro-redefined]
+  200 |   #define LITTLE_ENDIAN
+      |           ^
+/home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cache/sysroot/include/endian.h:15:9: note: previous definition is here
+   15 | #define LITTLE_ENDIAN __LITTLE_ENDIAN
+      |         ^
+1 warning generated.
+[100%] Linking CXX static library libPsfCore.a
+[100%] Built target PsfCore
+[100%] Building CXX object tools/PsfPlayer/Source/ui_js/CMakeFiles/PsfPlayer.dir/Main.cpp.o
+[100%] Building CXX object tools/PsfPlayer/Source/ui_js/CMakeFiles/PsfPlayer.dir/PsfVmJs.cpp.o
+[100%] Building CXX object tools/PsfPlayer/Source/ui_js/CMakeFiles/PsfPlayer.dir/SH_FileOutput.cpp.o
+[100%] Linking CXX executable PsfPlayer.js
+em++: warning: -pthread + ALLOW_MEMORY_GROWTH may run non-wasm code slowly, see https://github.com/WebAssembly/design/issues/1271 [-Wpthreads-mem-growth]
+cache:INFO: generating system asset: symbol_lists/daed9b9fc775202fa7256cbf622f3ebda7e93325.json... (this will be cached in "/home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cache/symbol_lists/daed9b9fc775202fa7256cbf622f3ebda7e93325.json" for subsequent builds)
+cache:INFO:  - ok
+[100%] Built target Play
+[100%] Built target PsfPlayer
+=== build exit: 0 ===
