@@ -25,20 +25,26 @@ Seguido al pie de la letra el README del proyecto (`jpd002/play-`, commit
    truncaba/bloqueaba contra `storage.googleapis.com`.
 3. `emcmake cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PLAY=ON -DBUILD_PSFPLAYER=ON -DUSE_QT=OFF`
    → configure OK.
-4. `cmake --build . --config Release -j2` → **EN CURSO** al redactar esto.
+4. `cmake --build . --config Release -j2` → **ÉXITO** (`[100%] Built target Play`, exit 0).
 
 Log completo: `build-log.txt`.
 
 ### Veredicto del build oficial
 
-> *(sección pendiente del resultado final del build)*
+> **El build oficial desde fuentes FUNCIONÓ.** Sin parchear el proyecto Play!:
+> `Play.js` (206.318 B) + `Play.wasm` (2.157.100 B) compilados con emsdk 3.1.73
+> el 2026-09-30 (~1h35 de compilación, 539 objetos, cero errores). Los artefactos
+> se vendorizaron en `vendor/` (SHA256 en `vendor/SHA256SUMS`) y la PWA arranca con
+> ellos verificada en Chromium real: `crossOriginIsolated: True`, WebGL2 OK,
+> «Núcleo listo», cero errores JS. El plan B (artefactos publicados) quedó
+> **reemplazado** por el build propio.
 
-## Qué se sirve (plan B, verificado)
+## Qué se sirve (build oficial, verificado)
 
-Ante la duración del build oficial, la PWA vendoriza localmente los artefactos
-**publicados por el propio proyecto** en su demo oficial (https://playjs.purei.org):
-`vendor/Play.js` (206 KB) + `vendor/Play.wasm` (2,2 MB), con SHA256 en
-`vendor/SHA256SUMS`. **Nada se hotlinkea**: todo se sirve desde el mismo origen.
+La PWA sirve los artefactos **compilados desde las fuentes oficiales de Play!**
+en esta máquina: `vendor/Play.js` (206 KB) + `vendor/Play.wasm` (2,1 MB), con
+SHA256 en `vendor/SHA256SUMS`. **Nada se hotlinkea**: todo se sirve desde el
+mismo origen.
 Si el build oficial termina con éxito, estos archivos se sustituyen por los
 recién compilados (misma API: `Play()`, `initVm`, `bootDiscImage`, `bootElf`,
 `getFrames`, `clearStats`, `discImageDevice`).
