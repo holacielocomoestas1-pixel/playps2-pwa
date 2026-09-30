@@ -67,13 +67,29 @@ Web service en Render (tier gratuito) con este mismo `serve.py`:
 gh repo create <nombre> --public --source ~/workspace/emulador/ps2
 git -C ~/workspace/emulador/ps2 push -u origin main
 python3 ~/workspace/skills/render/bin/render.py service-create \
-  '{"type":"web_service","name":"playps2-pwa","repo":"https://github.com/<u>/<repo>",
-    "branch":"main","runtime":"python","buildCommand":"true",
-    "startCommand":"python3 serve.py","plan":"free","region":"oregon"}'
+  '{"type":"web_service","name":"playps2-pwa","ownerId":"<owner>","repo":"https://github.com/<u>/<repo>",
+    "branch":"main","autoDeploy":"yes",
+    "serviceDetails":{"runtime":"docker","plan":"free","region":"oregon",
+      "envSpecificDetails":{"dockerfilePath":"./Dockerfile","dockerContext":"."}}}}'
 ```
 
-`serve.py` lee el puerto de `$PORT`. Las cabeceras COOP/COEP ya van incluidas,
+`serve.py` lee `$PORT`/`$HOST` del entorno. Las cabeceras COOP/COEP ya van incluidas,
 imprescindibles para el wasm con pthreads.
+
+### Estado del deploy (2026-09-30)
+
+- Repo: https://github.com/holacielocomoestas1-pixel/playps2-pwa (público).
+- Servicio Render creado: `playps2-pwa` (`srv-dauel43ncjis73fbblc0`),
+  URL prevista https://playps2-pwa.onrender.com, plan free, región oregon, runtime docker.
+- **Deploy BLOQUEADO por cuota**: el primer deploy (`dep-dauel4bncjis73fbblu0`)
+  falló en <1 s con `build_failed` — la cuenta agotó sus minutos de build del
+  tier gratuito (`pipeline_minutes_exhausted`; la track hermana PSP lo confirmó
+  hoy con el mismo síntoma). No es problema del código ni del Dockerfile.
+- `autoDeploy: yes` quedó activado: cuando la cuota se resetee (1 de octubre),
+  Render debería desplegar solo desde `main`. **No se gastó dinero.**
+- Verificación pendiente: cuando el deploy viva, comprobar
+  `Cross-Origin-Opener-Policy: same-origin` + `Cross-Origin-Embedder-Policy:
+  require-corp` en la respuesta y que el núcleo arranque.
 
 ## Licencia
 
