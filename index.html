@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Play! PS2 — PWA experimental</title>
+<meta name="description" content="Play! (emulador de PlayStation 2) compilado a WebAssembly. Experimento, no apto para juegos 3D exigentes.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b0e14">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">▶</span>
+    <div>
+      <h1>Play! PS2 <span class="tag">experimental</span></h1>
+      <p class="sub">Emulador de PS2 en WebAssembly · vía navegador</p>
+    </div>
+  </div>
+  <div class="fps" id="fps" title="Cuadros por segundo del emulador">— f/s</div>
+</header>
+
+<main>
+  <section class="screen-wrap">
+    <canvas id="outputCanvas" width="640" height="480" tabindex="0"></canvas>
+    <div class="overlay" id="overlay">
+      <div class="card">
+        <h2>Carga tu propio juego</h2>
+        <p>Formatos: ISO, CSO, CHD, ISZ, BIN, ELF.<br>
+        No se necesita BIOS. Usa solo copias de juegos que poseas legalmente o homebrew.</p>
+        <label class="filebtn">
+          Elegir archivo…
+          <input type="file" id="fileInput" accept=".iso,.cso,.chd,.isz,.bin,.elf" hidden>
+        </label>
+        <p class="status" id="status">Iniciando el núcleo…</p>
+        <p class="legal">⚠️ Experimental: sin JIT con invalidación de caché ni control de punto flotante.
+        Los juegos 3D exigentes (p. ej. <b>God of War</b>) <b>no serán jugables</b> por esta vía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="controls" id="controls" aria-label="Controles táctiles">
+    <div class="pad-cluster">
+      <div class="dpad">
+        <button data-code="ArrowUp"    class="dbtn up" aria-label="Arriba">▲</button>
+        <button data-code="ArrowLeft"  class="dbtn left" aria-label="Izquierda">◀</button>
+        <button data-code="ArrowRight" class="dbtn right" aria-label="Derecha">▶</button>
+        <button data-code="ArrowDown"  class="dbtn down" aria-label="Abajo">▼</button>
+      </div>
+      <div class="sysbtns">
+        <button data-code="Backspace" class="sys" id="btnSelect">SELECT</button>
+        <button data-code="Enter" class="sys" id="btnStart">START</button>
+      </div>
+    </div>
+    <div class="face-cluster">
+      <div class="shoulders">
+        <button data-code="Digit1" class="sh">L1</button>
+        <button data-code="Digit8" class="sh">R1</button>
+      </div>
+      <div class="face">
+        <button data-code="KeyS" class="fbtn tri" aria-label="Triángulo">△</button>
+        <button data-code="KeyX" class="fbtn cir" aria-label="Círculo">○</button>
+        <button data-code="KeyA" class="fbtn sq"  aria-label="Cuadrado">□</button>
+        <button data-code="KeyZ" class="fbtn cro" aria-label="Cruz">✕</button>
+      </div>
+      <div class="shoulders">
+        <button data-code="Digit2" class="sh">L2</button>
+        <button data-code="Digit9" class="sh">R2</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="help">
+    <details>
+      <summary>Teclado (escritorio)</summary>
+      <p>D-Pad: flechas · □ A · ✕ Z · △ S · ○ X · Start Enter · Select Backspace ·
+      L1 1 · L2 2 · R1 8 · R2 9. Haz clic en la pantalla primero para que reciba el teclado.</p>
+    </details>
+    <details>
+      <summary>Aviso de licencia</summary>
+      <p>Play! © 2006–2026 Jean-Philip Desjardins. Licencia BSD (ver LICENSE).
+      Este experimento redistribuye sus binarios publicados con el aviso de copyright intacto.</p>
+    </details>
+  </section>
+</main>
+
+<script type="module" src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Build toolchain (emsdk) — se instala con los pasos del README, no se versiona
+emsdk/
+# Intermedios de build
+build_web/
+*.o
+# OS / editores
+.DS_Store

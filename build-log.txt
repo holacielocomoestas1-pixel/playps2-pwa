@@ -1,0 +1,157 @@
+=== Wed Sep 30 10:37:08 UTC 2026 git submodule update --init --depth 1 ===
+Submodule 'deps/AltKit' (https://github.com/jpd002/AltKit.git) registered for path 'deps/AltKit'
+Submodule 'deps/CodeGen' (https://github.com/jpd002/Play--CodeGen.git) registered for path 'deps/CodeGen'
+Submodule 'deps/Dependencies' (https://github.com/jpd002/Play-Dependencies.git) registered for path 'deps/Dependencies'
+Submodule 'deps/Framework' (https://github.com/jpd002/Play--Framework.git) registered for path 'deps/Framework'
+Submodule 'deps/Nuanceur' (https://github.com/jpd002/Nuanceur.git) registered for path 'deps/Nuanceur'
+Submodule 'deps/libchdr' (https://github.com/jpd002/libchdr.git) registered for path 'deps/libchdr'
+Cloning into '/tmp/play-src/deps/AltKit'...
+Cloning into '/tmp/play-src/deps/CodeGen'...
+Cloning into '/tmp/play-src/deps/Dependencies'...
+Cloning into '/tmp/play-src/deps/Framework'...
+Cloning into '/tmp/play-src/deps/Nuanceur'...
+Cloning into '/tmp/play-src/deps/libchdr'...
+From https://github.com/jpd002/AltKit
+ * branch            f799f60ef6fa8b9676b4102b7dfa169fb40b6c92 -> FETCH_HEAD
+Submodule path 'deps/AltKit': checked out 'f799f60ef6fa8b9676b4102b7dfa169fb40b6c92'
+Submodule path 'deps/CodeGen': checked out 'a5009f7dca062695b8e5aebbd71e67b4ddfa9251'
+Submodule path 'deps/Dependencies': checked out '8a5f6b1dea0b888b5a42b821e79470142bbea4e3'
+From https://github.com/jpd002/Play--Framework
+ * branch            587f278917acc0026bf5fc34b39f995fc26bd015 -> FETCH_HEAD
+Submodule path 'deps/Framework': checked out '587f278917acc0026bf5fc34b39f995fc26bd015'
+Submodule path 'deps/Nuanceur': checked out 'd96578b5a18edc67a268ed4811f0a035c56de7a0'
+From https://github.com/jpd002/libchdr
+ * branch            284e38b6e53e0a7270cc234934e45230ed915a25 -> FETCH_HEAD
+Submodule path 'deps/libchdr': checked out '284e38b6e53e0a7270cc234934e45230ed915a25'
+=== exit: 0 ===
+=== Wed Sep 30 10:38:04 UTC 2026 emcmake configure ===
+configure: cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PLAY=ON -DBUILD_PSFPLAYER=ON -DUSE_QT=OFF -DCMAKE_TOOLCHAIN_FILE=/home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/home/hatch/workspace/emulador/ps2/emsdk/node/24.19.0_64bit/bin/node
+-- Generating for JavaScript -- 
+-- Build type: Release
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+Building for 83700b2.
+-- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR) 
+-- Using Provided zlib source
+CMake Error at deps/Dependencies/build_cmake/zstd_zlibwrapper/CMakeLists.txt:20 (add_subdirectory):
+  add_subdirectory given source
+  "/tmp/play-src/deps/Dependencies/build_cmake/zstd_zlibwrapper/../../zstd/build/cmake/"
+  which is not an existing directory.
+
+
+-- Could NOT find ICUUC (missing: ICUUC_LIBRARY ICUUC_INCLUDE_DIR) 
+-- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR) 
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Could NOT find BZip2 (missing: BZIP2_LIBRARIES BZIP2_INCLUDE_DIR) 
+-- Using Provided BZip2 source
+CMake Error at Source/CMakeLists.txt:115 (add_subdirectory):
+  add_subdirectory given source
+  "/tmp/play-src/Source/../deps/Dependencies/xxHash/cmake_unofficial/" which
+  is not an existing directory.
+
+
+-- Could NOT find ICUUC (missing: ICUUC_LIBRARY ICUUC_INCLUDE_DIR) 
+-- The ASM compiler identification is unknown
+-- Found assembler: /home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/emcc
+-- Warning: Did not find file Compiler/-ASM
+-- ZSTD VERSION: 1.5.6
+-- Performing Test C_FLAG_WALL
+-- Performing Test C_FLAG_WALL - Success
+-- Performing Test CXX_FLAG_WALL
+-- Performing Test CXX_FLAG_WALL - Success
+-- Performing Test C_FLAG_WEXTRA
+-- Performing Test C_FLAG_WEXTRA - Success
+-- Performing Test CXX_FLAG_WEXTRA
+-- Performing Test CXX_FLAG_WEXTRA - Success
+-- Performing Test C_FLAG_WUNDEF
+-- Performing Test C_FLAG_WUNDEF - Success
+-- Performing Test CXX_FLAG_WUNDEF
+-- Performing Test CXX_FLAG_WUNDEF - Success
+-- Performing Test C_FLAG_WSHADOW
+-- Performing Test C_FLAG_WSHADOW - Success
+-- Performing Test CXX_FLAG_WSHADOW
+-- Performing Test CXX_FLAG_WSHADOW - Success
+-- Performing Test C_FLAG_WCAST_ALIGN
+-- Performing Test C_FLAG_WCAST_ALIGN - Success
+-- Performing Test CXX_FLAG_WCAST_ALIGN
+-- Performing Test CXX_FLAG_WCAST_ALIGN - Success
+-- Performing Test C_FLAG_WCAST_QUAL
+-- Performing Test C_FLAG_WCAST_QUAL - Success
+-- Performing Test CXX_FLAG_WCAST_QUAL
+-- Performing Test CXX_FLAG_WCAST_QUAL - Success
+-- Performing Test C_FLAG_WSTRICT_PROTOTYPES
+-- Performing Test C_FLAG_WSTRICT_PROTOTYPES - Success
+-- Performing Test LD_FLAG_Z_NOEXECSTACK
+-- Performing Test LD_FLAG_Z_NOEXECSTACK - Success
+-- Performing Test C_FLAG_QUNUSED_ARGUMENTS
+-- Performing Test C_FLAG_QUNUSED_ARGUMENTS - Success
+-- Performing Test CXX_FLAG_QUNUSED_ARGUMENTS
+-- Performing Test CXX_FLAG_QUNUSED_ARGUMENTS - Success
+-- Performing Test C_FLAG_WA_NOEXECSTACK
+-- Performing Test C_FLAG_WA_NOEXECSTACK - Success
+-- Performing Test CXX_FLAG_WA_NOEXECSTACK
+-- Performing Test CXX_FLAG_WA_NOEXECSTACK - Success
+-- CMAKE_INSTALL_PREFIX: /home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cache/sysroot
+-- CMAKE_INSTALL_LIBDIR: lib
+-- ZSTD_LEGACY_SUPPORT not defined!
+-- ZSTD_MULTITHREAD_SUPPORT is enabled
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Warning: Did not find file Compiler/-ASM
+-- Could NOT find SQLite3 (missing: SQLite3_INCLUDE_DIR SQLite3_LIBRARY) 
+-- Using Provided sqlite3 source
+-- Using Provided nlohmann_json source
+-- Using the single-header code from /tmp/play-src/deps/Dependencies/nlohmann_json/single_include/
+-- Configuring incomplete, errors occurred!
+emcmake: error: 'cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PLAY=ON -DBUILD_PSFPLAYER=ON -DUSE_QT=OFF -DCMAKE_TOOLCHAIN_FILE=/home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/home/hatch/workspace/emulador/ps2/emsdk/node/24.19.0_64bit/bin/node' failed (returned 1)
+=== configure exit: 1 ===
+=== Wed Sep 30 10:42:10 UTC 2026 git submodule update --init --recursive --depth 1 ===
+Submodule path 'deps/Dependencies/ghc_filesystem': checked out '2a8b380f8d4e77b389c42a194ab9c70d8e3a0f1e'
+From https://github.com/Cyan4973/xxHash
+ * branch            e626a72bc2321cd320e953a0ccf1584cad60f363 -> FETCH_HEAD
+Submodule path 'deps/Dependencies/xxHash': checked out 'e626a72bc2321cd320e953a0ccf1584cad60f363'
+From https://github.com/madler/zlib
+ * branch            5a82f71ed1dfc0bec044d9702463dbdf84ea3b71 -> FETCH_HEAD
+Submodule path 'deps/Dependencies/zlib': checked out '5a82f71ed1dfc0bec044d9702463dbdf84ea3b71'
+From https://github.com/facebook/zstd
+ * branch            f8745da6ff1ad1e7bab384bd1f9d742439278e99 -> FETCH_HEAD
+Submodule path 'deps/Dependencies/zstd': checked out 'f8745da6ff1ad1e7bab384bd1f9d742439278e99'
+Submodule 'deps/vkrunner' (https://github.com/jpd002/vkrunner) registered for path 'deps/Nuanceur/deps/vkrunner'
+Cloning into '/tmp/play-src/deps/Nuanceur/deps/vkrunner'...
+From https://github.com/jpd002/vkrunner
+ * branch            1b28778d9593d708aaa9dfa579e61c6cb08146dc -> FETCH_HEAD
+Submodule path 'deps/Nuanceur/deps/vkrunner': checked out '1b28778d9593d708aaa9dfa579e61c6cb08146dc'
+=== exit: 0 ===
+=== Wed Sep 30 10:44:33 UTC 2026 emcmake configure (retry) ===
+-- Build type: Release
+Building for 83700b2.
+-- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR) 
+-- Using Provided zlib source
+-- The ASM compiler identification is unknown
+-- Found assembler: /home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/emcc
+-- Warning: Did not find file Compiler/-ASM
+-- ZSTD VERSION: 1.5.7
+-- Performing Test LD_FLAG_WL_Z_NOEXECSTACK
+-- Performing Test LD_FLAG_WL_Z_NOEXECSTACK - Success
+-- CMAKE_INSTALL_PREFIX: /home/hatch/workspace/emulador/ps2/emsdk/upstream/emscripten/cache/sysroot
+-- CMAKE_INSTALL_LIBDIR: lib
+-- ZSTD_LEGACY_SUPPORT not defined!
+-- ZSTD_MULTITHREAD_SUPPORT is enabled
+-- Warning: Did not find file Compiler/-ASM
+-- Could NOT find ICUUC (missing: ICUUC_LIBRARY ICUUC_INCLUDE_DIR) 
+-- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR) 
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Could NOT find BZip2 (missing: BZIP2_LIBRARIES BZIP2_INCLUDE_DIR) 
+-- Using Provided BZip2 source
+-- xxHash build type: Release
+-- Architecture: x86_64
+-- Could NOT find ICUUC (missing: ICUUC_LIBRARY ICUUC_INCLUDE_DIR) 
+-- Could NOT find SQLite3 (missing: SQLite3_INCLUDE_DIR SQLite3_LIBRARY) 
+-- Using Provided sqlite3 source
+-- Using Provided nlohmann_json source
+-- Using the single-header code from /tmp/play-src/deps/Dependencies/nlohmann_json/single_include/
+-- Configuring done (58.3s)
+-- Generating done (1.5s)
+-- Build files have been written to: /tmp/play-src/build_web
+=== configure exit: 0 ===
+=== Wed Sep 30 10:45:42 UTC 2026 cmake --build . --config Release -j2 ===
